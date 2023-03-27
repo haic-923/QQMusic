@@ -3,105 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>QQ音乐播放器 - NJ</title>
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/jquery-1.12.4.js"></script>
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/progress.js"></script>
-    <script src="js/lyric.js"></script>
-    <script src="js/index.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doem23</title>
+    <script src="http://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <h1 class="logo">
-            <a href="#"></a>
-        </h1>
-        <ul class="register">
-            <li>登录</li>
-            <li>设置</li>
-        </ul>
-    </div>
-    <div class="content">
-        <div class="content_in">
-            <div class="content_left">
-                <div class="content_toolbar">
-                    <span><i></i>收藏</span>
-                    <span><i></i>添加到</span>
-                    <span><i></i>下载</span>
-                    <span><i></i>删除</span>
-                    <span><i></i>清空列表</span>
-                </div>
-                <div class="content_list" data-mcs-theme="minimal-dark">
-                    <ul>
-                        <li class="list_title">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number"></div>
-                            <div class="list_name">歌曲</div>
-                            <div class="list_singer">歌手</div>
-                            <div class="list_time">时长</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content_right">
-                <div class="song_info">
-                    <a href="javascript:;" class="song_info_pic">
-                        <img src="images/02.jpg" alt="">
-                    </a>
-                    <div class="song_info_name">歌曲名称:
-                        <a href="javascript:;">从零玩转编程开发</a>
-                    </div>
-                    <div class="song_info_singer">歌手名:
-                        <a href="javascript:;">李南江</a>
-                    </div>
-                    <div class="song_info_ablum">专辑名:
-                        <a href="javascript:;">从零玩转系列</a>
-                    </div>
-                </div>
-                <div class="song_lyric_container">
-                    <ul class="song_lyric">
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="footer_in">
-            <a href="javascript:;" class="music_pre"></a>
-            <a href="javascript:;" class="music_play"></a>
-            <a href="javascript:;" class="music_next"></a>
-            <div class="music_progress_info">
-                <div class="music_progress_top">
-                    <span class="music_progress_name">从零玩转编程 / 李南江</span>
-                    <span class="music_progress_time">00:00 / 05:23</span>
-                </div>
-                <div class="music_progress_bar">
-                    <div class="music_progress_line">
-                        <div class="music_progress_dot"></div>
-                    </div>
-                </div>
-            </div>
-            <a href="javascript:;" class="music_mode"></a>
-            <a href="javascript:;" class="music_fav"></a>
-            <a href="javascript:;" class="music_down"></a>
-            <a href="javascript:;" class="music_comment"></a>
-            <a href="javascript:;" class="music_only"></a>
-            <div class="music_voice_info">
-                <a href="javascript:;" class="music_voice_icon"></a>
-                <div class="music_voice_bar">
-                    <div class="music_voice_line">
-                        <div class="music_voice_dot"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mask_bg"></div>
-    <div class="mask"></div>
-    <audio src=""></audio>
+    <wx-open-launch-weapp id="launch-btn" username="gh_f480d756d97f" path="pages/cardIndex/cardIndex">
+        <!-- replace -->
+        <template style="display: block;">
+            <button
+                style="width: 200px; height: 45px; text-align: center; font-size: 17px; display: block; margin: 0 auto; padding: 8px 24px; border: none; border-radius: 4px; background-color: #07c160; color:#fff;">打开小程序234</button>
+        </template>
+    </wx-open-launch-weapp>
+    <script>
+        var btn = document.getElementById('launch-btn');
+        btn.addEventListener('launch', function (e) {
+            console.log('success');
+        });
+        btn.addEventListener('error', function (e) {
+            console.log('fail', e.detail);
+        });
+    </script>
+    <script>
+        wx.config({
+            beta: true,
+            appId: 'wx2421b1c4370ec43b',  // 必填，公众号的唯一标识
+            debug: true,    // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印
+            timestamp: '1395712654',  // 必填，生成签名的时间戳
+            nonceStr: 'e61463f8efa94090b1f366cccfbbb444',     // 必填，生成签名的随机串
+            signature: '70EA570631E4BB79628FBCA90534C63FF7FADD89',     // 必填，签名
+            jsApiList: [
+                'scanQRCode',
+                'onMenuShareQZone',
+                'onMenuShareWeibo',
+                'onMenuShareQQ',
+                'chooseImage',
+                'previewImage'
+            ],
+            openTagList: ['wx-open-launch-weapp'] // 获取开放标签权限
+        })
+    </script>
 </body>
 
 </html>
