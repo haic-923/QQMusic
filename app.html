@@ -10,16 +10,25 @@
 </head>
 
 <body>
-    <span>跳转小程序</span>
-    <div>测试</div>
     <div class="nav-list">
-      <div class="list-item" v-for="item in 3">
-        <div class="item">测试基础小程序1</div>
-        <div class="item">测试基础小程序2</div>
-        <div class="item">测试基础小程序3</div>
+      <div class="list-item">
+        <div>静兰小程序</div>
+        <wx-open-launch-weapp>
+            <template>
+                静兰小程序
+            </template>
+        </wx-open-launch-weapp>
+      </div>
+      <div class="list-item">
+        <div>基础社区小程序</div>
+        <wx-open-launch-weapp>
+            <template>
+                基础社区小程序
+            </template>
+        </wx-open-launch-weapp>
       </div>
     </div>
-    <wx-open-launch-weapp id="launch-btn" username="gh_f480d756d97f" path="pages/cardIndex/cardIndex">
+    <wx-open-launch-weapp id="launch-btn" appid="wx4be09d2dee459abb" path="pages/cardIndex/cardIndex">
         <!-- replace -->
         <template style="display: block;">
             <button style="width: 200px; height: 45px; text-align: center; font-size: 17px; display: block; margin: 0 auto; padding: 8px 24px; border: none; border-radius: 4px; background-color: #07c160; color:#fff;">打开小程序234</button>
@@ -34,6 +43,34 @@
             console.log('fail', e.detail);
         });
     </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .nav-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 10px;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+        }
+        .list-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            width: 100%;
+            height: 80px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,.1);
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
     <script>
         wx.config({
             beta: true,
